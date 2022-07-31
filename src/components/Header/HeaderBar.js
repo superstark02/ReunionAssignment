@@ -3,7 +3,7 @@ import {ImHome} from 'react-icons/im'
 import Button from '@mui/material/Button';
 import DropDownButton from './DropDownButton';
 import { AppBar, Box, Grid, Stack, styled, Toolbar, Typography, useMediaQuery, useTheme } from '@mui/material';
-import { grey,blue,deepPurple } from '@mui/material/colors';
+import { grey,deepPurple } from '@mui/material/colors';
 import './header.css'
 // import { theme } from '../../utils/theme';
 

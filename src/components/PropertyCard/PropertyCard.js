@@ -3,7 +3,7 @@ import Card from '@mui/material/Card';
 import mg from '../../utils/house.jpg'
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import { deepPurple ,grey} from '@mui/material/colors';
+import { deepPurple } from '@mui/material/colors';
 import Typography from '@mui/material/Typography';
 import { Divider, Stack } from '@mui/material';
 import { Box } from '@mui/system';

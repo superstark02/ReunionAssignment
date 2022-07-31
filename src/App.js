@@ -26,7 +26,7 @@ function App() {
     const dt=new Date(date);
     var arr=data.filter((val)=>{
       const x=new Date(val.moveInDate);
-      if(val.location==location&&x>=dt&&val.price>=priceRange.lp&&val.price<=priceRange.up&&val.propertyType==type)
+      if(val.location===location&&x>=dt&&val.price>=priceRange.lp&&val.price<=priceRange.up&&val.propertyType===type)
       return true;
       return false;
     })

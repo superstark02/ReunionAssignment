@@ -1,5 +1,5 @@
 import React from 'react'
-import { Select,Box,InputLabel } from '@mui/material';
+import { Select,Box} from '@mui/material';
 import {MenuItem} from '@mui/material';
 // To get PriceRange from user
 const PriceRange = ({handler}) => {
