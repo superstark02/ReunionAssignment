@@ -1,9 +1,9 @@
 import * as React from 'react';
 import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { Divider, Stack } from '@mui/material';
+import { Divider } from '@mui/material';
 import { Box } from '@mui/system';
 import BedIcon from '@mui/icons-material/Bed';
 import BathtubIcon from '@mui/icons-material/Bathtub';
@@ -23,19 +23,26 @@ const PropertyCard = ({ data }) => {
         />
         <PopTag />
         <div className='card-content' >
-          <div className='card-price' >
-            ${data.price}<span style={{ fontSize: 15, color: 'grey' }}>/month</span>
+          <div style={{display:"flex", justifyContent:'space-between'}} >
+            <div>
+              <div className='card-price' >
+                ${data.price}<span style={{ fontSize: 15, color: 'grey' }}>/month</span>
+              </div>
+              <Typography fontWeight='bold' variant='h5' >
+                {data.name}
+              </Typography>
+              <Box sx={{ paddingY: '0.6rem' }}>
+                <Typography variant="body2" color="text.secondary" >
+                  {data.address}
+                </Typography>
+              </Box>
+            </div>
+            <div>
+              <FavoriteBorderIcon sx={{ color: '#7c4dff' }} />
+            </div>
           </div>
-          <Typography fontWeight='bold' variant='h5' >
-            {data.name}
-          </Typography>
-          <Box sx={{ paddingY: '0.6rem' }}>
-            <Typography variant="body2" color="text.secondary" >
-              {data.address}
-            </Typography>
-          </Box>
           <Divider flexItem />
-          <div style={{display:"flex",justifyContent:"space-between", alignItems:"center",marginTop:"10px"}}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "10px" }}>
             <BedIcon sx={{ color: '#7c4dff' }} />
             <Typography fontSize={13}>{data.beds} Beds</Typography>
             <BathtubIcon sx={{ color: '#7c4dff' }} />
@@ -53,7 +60,7 @@ const PropertyCard = ({ data }) => {
 const PopTag = () => {
   return <Box position='absolute' sx={{ top: "55%", transform: "translate(-8px,-100%)" }}>
     <Box sx={theme => ({ background: '#7c4dff', p: 1, borderRadius: 1, borderBottomLeftRadius: 0, padding: '5px 10px' })}>
-      <Typography sx={{ color: 'white',fontSize: '12px' }}> <StarIcon sx={{fontSize:"15px"}} /> Popular</Typography>
+      <Typography sx={{ color: 'white', fontSize: '12px' }}> <StarIcon sx={{ fontSize: "15px" }} /> Popular</Typography>
     </Box>
     <Box sx={{
       width: 0, height: 0,
