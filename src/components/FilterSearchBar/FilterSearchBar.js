@@ -1,4 +1,4 @@
-import {Box,Typography,Stack, Card,Divider, Button} from '@mui/material'
+import {Box,Divider, Button} from '@mui/material'
 import React from 'react'
 import { deepPurple } from '@mui/material/colors';
 import TextField from '@mui/material/TextField';
@@ -6,6 +6,8 @@ import DateSet from './DateSet';
 import PriceRange from './PriceRange';
 import PropertyType from './PropertyType';
 import { useState } from 'react';
+import "./FilterSearchBar.css"
+
 // Component for the Filters
 const FilterSearchBar = ({handler,reset}) => {
     const [priceRange,setPriceRange]=useState({lp:0,up:Infinity});
@@ -27,27 +29,27 @@ const FilterSearchBar = ({handler,reset}) => {
   return (
     <Box sx={{paddingY:5}}>
 
-    <Card sx={{paddingY:2,paddingX:2}}>
-        <Stack direction="row" spacing={5} >
-            <Stack >
-                <Typography color='text.primary' fontSize={10} fontWeight={'bold'}>Location</Typography>
+    <div style={{width:"100%"}}>
+        <div style={{display:"flex",width:"100%",justifyContent:"space-between"}} >
+            <div >
+                <div class="f-title">Location</div>
                 <TextField onChange={(e)=>{setLocation(e.target.value)}}  id="standard-basic" defaultValue='New York' variant="standard" label='City'/>
-            </Stack>
+            </div>
             <Divider  orientation='vertical' flexItem />
-            <Stack >
-                <Typography color='text.primary' fontSize={10} fontWeight={'bold'}>When</Typography>
+            <div >
+                <div class="f-title">When</div>
                 <DateSet handler={handleDate} />
-            </Stack>
+            </div>
             <Divider  orientation='vertical' flexItem />
-            <Stack spacing={1}>
-                <Typography color='text.primary' fontSize={10} fontWeight={'bold'}>Price</Typography>
+            <div style={{paddingBottom:'15px'}}>
+                <div class="f-title">Price</div>
                 <PriceRange handler={handlePrice} />
-            </Stack>
+            </div>
             <Divider  orientation='vertical' flexItem />
-            <Stack spacing={1}>
-                <Typography color='text.primary' fontSize={10} fontWeight={'bold'}>Property Type</Typography>
+            <div style={{paddingBottom:'15px'}}>
+                <div class="f-title">Property Type</div>
                 <PropertyType handler={handleType}/>
-            </Stack>
+            </div>
             <Divider  orientation='vertical' flexItem />
             <Box sx={{ width:'15%',paddingY:1,display:'flex' ,alignItem:'center'}}>
             <Button onClick={()=>{
@@ -59,8 +61,8 @@ const FilterSearchBar = ({handler,reset}) => {
                 reset();
             }} color='error' variant='contained' sx={{ml:1}}>All</Button>}
             </Box>
-        </Stack>
-    </Card>
+        </div>
+    </div>
     
     </Box>
   )

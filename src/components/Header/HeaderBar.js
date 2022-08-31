@@ -1,11 +1,10 @@
 import React from 'react'
-import {ImHome} from 'react-icons/im'
 import Button from '@mui/material/Button';
 import DropDownButton from './DropDownButton';
 import { AppBar, Box, Grid, Stack, styled, Toolbar, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { grey,deepPurple } from '@mui/material/colors';
 import './header.css'
-// import { theme } from '../../utils/theme';
+import HouseSidingIcon from '@mui/icons-material/HouseSiding';
 
 const Btn = styled(Button)({
   color:'black',
@@ -18,12 +17,12 @@ const HeaderBar = () => {
   const pages = ["Rent", "Buy", "Sell"];
   const theme = useTheme();
   const isSmall = useMediaQuery(theme.breakpoints.down('sm'));
-  return <AppBar sx={theme => ({background: theme.palette.common.white})}>
+  return <AppBar elevation={0} sx={theme => ({background: theme.palette.common.white})}>
     <Toolbar>
-      <Box display='flex' alignItems={'center'}>
-         <ImHome style={{color:deepPurple.A200}}/>
-         <Typography color='text.primary'  sx={{fontSize:20,ml:1, fontWeight:'bold'}}>Reunion</Typography>
-      </Box>
+      <div style={{display:"flex",alignItems:"center"}}>
+         <HouseSidingIcon style={{color:"#7c4dff"}}/>
+         <Typography color='text.primary'  sx={{fontSize:20,ml:1, fontWeight:'bold'}}>Estatery</Typography>
+      </div>
       {!isSmall && 
       <Grid container spacing={5} sx={{ml:5}}>
         {pages.map((page, idx) => <Grid  item key={idx} >

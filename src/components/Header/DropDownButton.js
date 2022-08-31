@@ -4,6 +4,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { deepPurple } from '@mui/material/colors';
+
 export default function DropDownButton({color,text}) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -36,9 +37,7 @@ export default function DropDownButton({color,text}) {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleClose}>option</MenuItem>
-        <MenuItem onClick={handleClose}>option</MenuItem>
-        <MenuItem onClick={handleClose}>option</MenuItem>
+        <MenuItem onClick={handleClose}>Options </MenuItem>
       </Menu>
     </div>
   );
