@@ -14,7 +14,7 @@ function App() {
     const dt = new Date(date);
     var arr = data.filter((val) => {
       const x = new Date(val.date);
-      if (val.city === location && x >= dt && val.price >= priceRange.lp && val.price <= priceRange.up && val.propertyType === type)
+      if (val.city === location && x >= dt && val.price >= priceRange.lp && val.price <= priceRange.up && val.type === type)
         return true;
       return false;
     })
